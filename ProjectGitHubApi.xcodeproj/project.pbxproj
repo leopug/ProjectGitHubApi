@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779375243B816D00B61F05 /* AppDelegate.swift */; };
 		3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779377243B816D00B61F05 /* SceneDelegate.swift */; };
-		3F77937A243B816D00B61F05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779379243B816D00B61F05 /* ViewController.swift */; };
-		3F77937D243B816D00B61F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F77937B243B816D00B61F05 /* Main.storyboard */; };
 		3F77937F243B817400B61F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F77937E243B817400B61F05 /* Assets.xcassets */; };
 		3F779382243B817400B61F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F779380243B817400B61F05 /* LaunchScreen.storyboard */; };
+		3F77938A243D02A100B61F05 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779389243D02A100B61F05 /* SearchVC.swift */; };
+		3F77938C243D02D100B61F05 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938B243D02D100B61F05 /* FavoritesListVC.swift */; };
+		3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938D243E21D800B61F05 /* GHAButton.swift */; };
+		3F779390243E250000B61F05 /* GHATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938F243E250000B61F05 /* GHATextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3F779372243B816C00B61F05 /* ProjectGitHubApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectGitHubApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F779375243B816D00B61F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F779377243B816D00B61F05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F779379243B816D00B61F05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3F77937C243B816D00B61F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F77937E243B817400B61F05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F779381243B817400B61F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F779383243B817400B61F05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F779389243D02A100B61F05 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		3F77938B243D02D100B61F05 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
+		3F77938D243E21D800B61F05 /* GHAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAButton.swift; sourceTree = "<group>"; };
+		3F77938F243E250000B61F05 /* GHATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHATextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				3F779375243B816D00B61F05 /* AppDelegate.swift */,
 				3F779377243B816D00B61F05 /* SceneDelegate.swift */,
-				3F779379243B816D00B61F05 /* ViewController.swift */,
-				3F77937B243B816D00B61F05 /* Main.storyboard */,
+				3F77938D243E21D800B61F05 /* GHAButton.swift */,
 				3F77937E243B817400B61F05 /* Assets.xcassets */,
 				3F779380243B817400B61F05 /* LaunchScreen.storyboard */,
 				3F779383243B817400B61F05 /* Info.plist */,
+				3F779389243D02A100B61F05 /* SearchVC.swift */,
+				3F77938B243D02D100B61F05 /* FavoritesListVC.swift */,
+				3F77938F243E250000B61F05 /* GHATextField.swift */,
 			);
 			path = ProjectGitHubApi;
 			sourceTree = "<group>";
@@ -127,7 +133,6 @@
 			files = (
 				3F779382243B817400B61F05 /* LaunchScreen.storyboard in Resources */,
 				3F77937F243B817400B61F05 /* Assets.xcassets in Resources */,
-				3F77937D243B816D00B61F05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +143,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F77937A243B816D00B61F05 /* ViewController.swift in Sources */,
+				3F77938C243D02D100B61F05 /* FavoritesListVC.swift in Sources */,
+				3F77938A243D02A100B61F05 /* SearchVC.swift in Sources */,
 				3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */,
 				3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */,
+				3F779390243E250000B61F05 /* GHATextField.swift in Sources */,
+				3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3F77937B243B816D00B61F05 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F77937C243B816D00B61F05 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3F779380243B817400B61F05 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +294,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.examples.ProjectGitHubApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.examples.ProjectGitHubApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
