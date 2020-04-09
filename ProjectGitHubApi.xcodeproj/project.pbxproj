@@ -15,6 +15,7 @@
 		3F77938C243D02D100B61F05 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938B243D02D100B61F05 /* FavoritesListVC.swift */; };
 		3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938D243E21D800B61F05 /* GHAButton.swift */; };
 		3F779390243E250000B61F05 /* GHATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938F243E250000B61F05 /* GHATextField.swift */; };
+		3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779391243F951000B61F05 /* FollowerListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3F77938B243D02D100B61F05 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		3F77938D243E21D800B61F05 /* GHAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAButton.swift; sourceTree = "<group>"; };
 		3F77938F243E250000B61F05 /* GHATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHATextField.swift; sourceTree = "<group>"; };
+		3F779391243F951000B61F05 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3F779389243D02A100B61F05 /* SearchVC.swift */,
 				3F77938B243D02D100B61F05 /* FavoritesListVC.swift */,
 				3F77938F243E250000B61F05 /* GHATextField.swift */,
+				3F779391243F951000B61F05 /* FollowerListVC.swift */,
 			);
 			path = ProjectGitHubApi;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				3F77938A243D02A100B61F05 /* SearchVC.swift in Sources */,
 				3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */,
 				3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */,
+				3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */,
 				3F779390243E250000B61F05 /* GHATextField.swift in Sources */,
 				3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */,
 			);
