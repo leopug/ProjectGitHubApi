@@ -16,6 +16,10 @@
 		3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938D243E21D800B61F05 /* GHAButton.swift */; };
 		3F779390243E250000B61F05 /* GHATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77938F243E250000B61F05 /* GHATextField.swift */; };
 		3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779391243F951000B61F05 /* FollowerListVC.swift */; };
+		3F7793942440B18A00B61F05 /* GHATitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7793932440B18A00B61F05 /* GHATitleLable.swift */; };
+		3F7793962441074800B61F05 /* GHABodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7793952441074800B61F05 /* GHABodyLabel.swift */; };
+		3F7793982441080500B61F05 /* GHAAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7793972441080500B61F05 /* GHAAlertVC.swift */; };
+		3F77939A24410ECB00B61F05 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77939924410ECB00B61F05 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		3F77938D243E21D800B61F05 /* GHAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAButton.swift; sourceTree = "<group>"; };
 		3F77938F243E250000B61F05 /* GHATextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHATextField.swift; sourceTree = "<group>"; };
 		3F779391243F951000B61F05 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
+		3F7793932440B18A00B61F05 /* GHATitleLable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHATitleLable.swift; sourceTree = "<group>"; };
+		3F7793952441074800B61F05 /* GHABodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHABodyLabel.swift; sourceTree = "<group>"; };
+		3F7793972441080500B61F05 /* GHAAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAAlertVC.swift; sourceTree = "<group>"; };
+		3F77939924410ECB00B61F05 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,10 @@
 				3F77938B243D02D100B61F05 /* FavoritesListVC.swift */,
 				3F77938F243E250000B61F05 /* GHATextField.swift */,
 				3F779391243F951000B61F05 /* FollowerListVC.swift */,
+				3F7793932440B18A00B61F05 /* GHATitleLable.swift */,
+				3F7793952441074800B61F05 /* GHABodyLabel.swift */,
+				3F7793972441080500B61F05 /* GHAAlertVC.swift */,
+				3F77939924410ECB00B61F05 /* UIViewController+Ext.swift */,
 			);
 			path = ProjectGitHubApi;
 			sourceTree = "<group>";
@@ -146,13 +158,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7793982441080500B61F05 /* GHAAlertVC.swift in Sources */,
+				3F7793942440B18A00B61F05 /* GHATitleLable.swift in Sources */,
 				3F77938C243D02D100B61F05 /* FavoritesListVC.swift in Sources */,
+				3F77939A24410ECB00B61F05 /* UIViewController+Ext.swift in Sources */,
 				3F77938A243D02A100B61F05 /* SearchVC.swift in Sources */,
 				3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */,
 				3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */,
 				3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */,
 				3F779390243E250000B61F05 /* GHATextField.swift in Sources */,
 				3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */,
+				3F7793962441074800B61F05 /* GHABodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,11 +1,3 @@
-//
-//  GHAButton.swift
-//  ProjectGitHubApi
-//
-//  Created by Ana Caroline de Souza on 08/04/20.
-//  Copyright © 2020 Leo Corp. All rights reserved.
-//
-
 import UIKit
 
 class GHAButton: UIButton {

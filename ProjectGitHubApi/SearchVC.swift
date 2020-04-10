@@ -1,11 +1,3 @@
-//
-//  SearchVC.swift
-//  ProjectGitHubApi
-//
-//  Created by Ana Caroline de Souza on 07/04/20.
-//  Copyright © 2020 Leo Corp. All rights reserved.
-//
-
 import UIKit
 
 class SearchVC: UIViewController {
@@ -33,7 +25,7 @@ class SearchVC: UIViewController {
     
     @objc func pushFollowerListVC(){
         guard isUserNameEntered else {
-            print("no username")
+            presentGHAAlertOnMainThread(title: "Empty Username", message: "Please enter a username. We nesse to know this information. ", buttonTitle: "Ok")
             return
             
         }
