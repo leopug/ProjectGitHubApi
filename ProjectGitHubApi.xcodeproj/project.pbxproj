@@ -22,6 +22,8 @@
 		3F77939A24410ECB00B61F05 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77939924410ECB00B61F05 /* UIViewController+Ext.swift */; };
 		3F7793A32444954400B61F05 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7793A22444954400B61F05 /* Follower.swift */; };
 		3F7793A5244495FE00B61F05 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7793A4244495FE00B61F05 /* User.swift */; };
+		3F8D5E1B2445ED4900C8CA53 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D5E1A2445ED4900C8CA53 /* NetworkManager.swift */; };
+		3F8D5E1E2447960800C8CA53 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D5E1D2447960800C8CA53 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		3F77939924410ECB00B61F05 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		3F7793A22444954400B61F05 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		3F7793A4244495FE00B61F05 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3F8D5E1A2445ED4900C8CA53 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3F8D5E1D2447960800C8CA53 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 		3F779374243B816C00B61F05 /* ProjectGitHubApi */ = {
 			isa = PBXGroup;
 			children = (
+				3F8D5E1C244795EF00C8CA53 /* Utilities */,
+				3F8D5E192445ED1F00C8CA53 /* Managers */,
 				3F7793A12444952C00B61F05 /* Model */,
 				3F77939E2443462700B61F05 /* Support */,
 				3F77939D244345C800B61F05 /* Extensions */,
@@ -132,6 +138,22 @@
 				3F7793A4244495FE00B61F05 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3F8D5E192445ED1F00C8CA53 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3F8D5E1A2445ED4900C8CA53 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3F8D5E1C244795EF00C8CA53 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3F8D5E1D2447960800C8CA53 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +233,11 @@
 				3F77939A24410ECB00B61F05 /* UIViewController+Ext.swift in Sources */,
 				3F77938A243D02A100B61F05 /* SearchVC.swift in Sources */,
 				3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */,
+				3F8D5E1E2447960800C8CA53 /* ErrorMessage.swift in Sources */,
 				3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */,
 				3F7793A32444954400B61F05 /* Follower.swift in Sources */,
 				3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */,
+				3F8D5E1B2445ED4900C8CA53 /* NetworkManager.swift in Sources */,
 				3F779390243E250000B61F05 /* GHATextField.swift in Sources */,
 				3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */,
 				3F7793962441074800B61F05 /* GHABodyLabel.swift in Sources */,
