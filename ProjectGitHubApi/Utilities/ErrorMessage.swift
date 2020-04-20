@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ErrorMessage: String {
+enum GHAErrorMessage: String, Error {
     case invalidUsername = "This username created a invalid request, please try again"
     case unableToComplete = "Unable to completed your request. Please check your internet"
     case invalidResponse = "Invalid response from the server. Please try again"
