@@ -1,11 +1,3 @@
-//
-//  ErrorMessage.swift
-//  ProjectGitHubApi
-//
-//  Created by Ana Caroline de Souza on 15/04/20.
-//  Copyright © 2020 Leo Corp. All rights reserved.
-//
-
 import Foundation
 
 enum GHAErrorMessage: String, Error {

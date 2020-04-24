@@ -1,11 +1,3 @@
-//
-//  FollowerCell.swift
-//  ProjectGitHubApi
-//
-//  Created by Ana Caroline de Souza on 20/04/20.
-//  Copyright © 2020 Leo Corp. All rights reserved.
-//
-
 import UIKit
 
 class FollowerCell: UICollectionViewCell {
@@ -37,7 +29,7 @@ class FollowerCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: padding),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
-            avatarImageView.trailingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: -padding),
+            avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor),
             
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
