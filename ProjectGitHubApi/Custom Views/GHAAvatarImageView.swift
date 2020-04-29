@@ -2,7 +2,7 @@ import UIKit
 
 class GHAAvatarImageView: UIImageView {
 
-   let placeholderImage = UIImage(named: "avatar-placeholder")
+    let placeholderImage = UIImage(named: "avatar-placeholder")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
