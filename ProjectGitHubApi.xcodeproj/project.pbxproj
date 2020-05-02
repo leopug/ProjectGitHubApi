@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2EE981245DA4B4006F8AA1 /* GHAEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE980245DA4B4006F8AA1 /* GHAEmptyStateView.swift */; };
 		3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779375243B816D00B61F05 /* AppDelegate.swift */; };
 		3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779377243B816D00B61F05 /* SceneDelegate.swift */; };
 		3F77937F243B817400B61F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F77937E243B817400B61F05 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2EE980245DA4B4006F8AA1 /* GHAEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAEmptyStateView.swift; sourceTree = "<group>"; };
 		3F779372243B816C00B61F05 /* ProjectGitHubApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectGitHubApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F779375243B816D00B61F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F779377243B816D00B61F05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2EE97A245DA410006F8AA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F2EE980245DA4B4006F8AA1 /* GHAEmptyStateView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3F2EE97B245DA418006F8AA1 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				3F77938D243E21D800B61F05 /* GHAButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3F2EE97C245DA428006F8AA1 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				3F77938F243E250000B61F05 /* GHATextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		3F2EE97D245DA43B006F8AA1 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				3FAB261C244E04A70093BBE1 /* GHAAvatarImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		3F2EE97E245DA445006F8AA1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F7793972441080500B61F05 /* GHAAlertVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3F2EE97F245DA479006F8AA1 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				3F7793952441074800B61F05 /* GHABodyLabel.swift */,
+				3F7793932440B18A00B61F05 /* GHATitleLable.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
 		3F779369243B816C00B61F05 = {
 			isa = PBXGroup;
 			children = (
@@ -108,13 +159,13 @@
 		3F77939C2443458300B61F05 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F2EE97F245DA479006F8AA1 /* Labels */,
+				3F2EE97E245DA445006F8AA1 /* ViewControllers */,
+				3F2EE97D245DA43B006F8AA1 /* ImageViews */,
+				3F2EE97C245DA428006F8AA1 /* TextFields */,
+				3F2EE97B245DA418006F8AA1 /* Buttons */,
+				3F2EE97A245DA410006F8AA1 /* Views */,
 				3FAB2619244E03B70093BBE1 /* Cells */,
-				3F7793972441080500B61F05 /* GHAAlertVC.swift */,
-				3F77938D243E21D800B61F05 /* GHAButton.swift */,
-				3F77938F243E250000B61F05 /* GHATextField.swift */,
-				3F7793932440B18A00B61F05 /* GHATitleLable.swift */,
-				3F7793952441074800B61F05 /* GHABodyLabel.swift */,
-				3FAB261C244E04A70093BBE1 /* GHAAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -260,6 +311,7 @@
 				3F8D5E1B2445ED4900C8CA53 /* NetworkManager.swift in Sources */,
 				3F779390243E250000B61F05 /* GHATextField.swift in Sources */,
 				3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */,
+				3F2EE981245DA4B4006F8AA1 /* GHAEmptyStateView.swift in Sources */,
 				3F7793962441074800B61F05 /* GHABodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
