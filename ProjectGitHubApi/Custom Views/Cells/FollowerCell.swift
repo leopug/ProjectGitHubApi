@@ -24,9 +24,7 @@ class FollowerCell: UICollectionViewCell {
     
     
     fileprivate func setFollowerImage(_ follower: Follower) {
-        
         NetworkManager.shared.downloadImage(from: follower.avatarUrl) { [weak self] image in
-            
             DispatchQueue.main.async {
                 self?.avatarImageView.image = image
             }
