@@ -32,6 +32,7 @@
 		3FAB261B244E04050093BBE1 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB261A244E04050093BBE1 /* FollowerCell.swift */; };
 		3FAB261D244E04A70093BBE1 /* GHAAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB261C244E04A70093BBE1 /* GHAAvatarImageView.swift */; };
 		3FAB261F245752B30093BBE1 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB261E245752B20093BBE1 /* UIHelper.swift */; };
+		3FB5A6482469D34C00B603E0 /* GHAItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		3FAB261A244E04050093BBE1 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		3FAB261C244E04A70093BBE1 /* GHAAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAAvatarImageView.swift; sourceTree = "<group>"; };
 		3FAB261E245752B20093BBE1 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAItemInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				3F2EE980245DA4B4006F8AA1 /* GHAEmptyStateView.swift */,
+				3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				3FAB261B244E04050093BBE1 /* FollowerCell.swift in Sources */,
 				3F8D5E1E2447960800C8CA53 /* GHAErrorMessage.swift in Sources */,
 				3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */,
+				3FB5A6482469D34C00B603E0 /* GHAItemInfoView.swift in Sources */,
 				3F7793A32444954400B61F05 /* Follower.swift in Sources */,
 				3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */,
 				3F8D5E1B2445ED4900C8CA53 /* NetworkManager.swift in Sources */,
