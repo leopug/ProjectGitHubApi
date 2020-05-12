@@ -33,6 +33,7 @@
 		3FAB261D244E04A70093BBE1 /* GHAAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB261C244E04A70093BBE1 /* GHAAvatarImageView.swift */; };
 		3FAB261F245752B30093BBE1 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB261E245752B20093BBE1 /* UIHelper.swift */; };
 		3FB5A6482469D34C00B603E0 /* GHAItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */; };
+		3FB5A658246B131A00B603E0 /* GHAItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		3FAB261C244E04A70093BBE1 /* GHAAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAAvatarImageView.swift; sourceTree = "<group>"; };
 		3FAB261E245752B20093BBE1 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAItemInfoView.swift; sourceTree = "<group>"; };
+		3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAItemInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				3F7793972441080500B61F05 /* GHAAlertVC.swift */,
 				3F2EE99F24647AC6006F8AA1 /* GHAUserInfoHeaderVC.swift */,
+				3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7793A5244495FE00B61F05 /* User.swift in Sources */,
+				3FB5A658246B131A00B603E0 /* GHAItemInfoVC.swift in Sources */,
 				3FAB261D244E04A70093BBE1 /* GHAAvatarImageView.swift in Sources */,
 				3F7793982441080500B61F05 /* GHAAlertVC.swift in Sources */,
 				3F2EE9A224647B47006F8AA1 /* GHASecondaryTitleLabel.swift in Sources */,
