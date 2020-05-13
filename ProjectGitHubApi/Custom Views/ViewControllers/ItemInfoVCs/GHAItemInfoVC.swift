@@ -6,12 +6,22 @@ class GHAItemInfoVC: UIViewController {
     let itemInfoViewOne = GHAItemInfoView()
     let itemInfoViewTwo = GHAItemInfoView()
     let actionButton = GHAButton()
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackground()
         layoutUI()
         configureStackView()
+    }
+    
+    init(user: User) {
+        super.init(nibName: nil, bundle: nil)
+        self.user = user
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func configureBackground() {
