@@ -34,6 +34,8 @@
 		3FAB261F245752B30093BBE1 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB261E245752B20093BBE1 /* UIHelper.swift */; };
 		3FB5A6482469D34C00B603E0 /* GHAItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */; };
 		3FB5A658246B131A00B603E0 /* GHAItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */; };
+		3FB5A65A246C5DF100B603E0 /* GHARepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A659246C5DEF00B603E0 /* GHARepoItemVC.swift */; };
+		3FB5A65C246C632800B603E0 /* GHAFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A65B246C632800B603E0 /* GHAFollowerItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		3FAB261E245752B20093BBE1 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		3FB5A6472469D34C00B603E0 /* GHAItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAItemInfoView.swift; sourceTree = "<group>"; };
 		3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAItemInfoVC.swift; sourceTree = "<group>"; };
+		3FB5A659246C5DEF00B603E0 /* GHARepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHARepoItemVC.swift; sourceTree = "<group>"; };
+		3FB5A65B246C632800B603E0 /* GHAFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAFollowerItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +119,9 @@
 		3F2EE97E245DA445006F8AA1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3FB5A65D246C638100B603E0 /* ItemInfoVCs */,
 				3F7793972441080500B61F05 /* GHAAlertVC.swift */,
 				3F2EE99F24647AC6006F8AA1 /* GHAUserInfoHeaderVC.swift */,
-				3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,6 +246,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3FB5A65D246C638100B603E0 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				3FB5A657246B131900B603E0 /* GHAItemInfoVC.swift */,
+				3FB5A659246C5DEF00B603E0 /* GHARepoItemVC.swift */,
+				3FB5A65B246C632800B603E0 /* GHAFollowerItemVC.swift */,
+			);
+			path = ItemInfoVCs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -336,7 +350,9 @@
 				3F2EE981245DA4B4006F8AA1 /* GHAEmptyStateView.swift in Sources */,
 				3F2EE9A024647AC7006F8AA1 /* GHAUserInfoHeaderVC.swift in Sources */,
 				3F7793962441074800B61F05 /* GHABodyLabel.swift in Sources */,
+				3FB5A65A246C5DF100B603E0 /* GHARepoItemVC.swift in Sources */,
 				3F2EE9832461CE22006F8AA1 /* UserInfoVC.swift in Sources */,
+				3FB5A65C246C632800B603E0 /* GHAFollowerItemVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

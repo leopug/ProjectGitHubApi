@@ -43,7 +43,7 @@ class GHAItemInfoView: UIView {
             
             countLabel.topAnchor.constraint(equalTo: symbolImageView.bottomAnchor, constant: 4),
             countLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            countLabel.leadingAnchor.constraint(equalTo: self.trailingAnchor),
+            countLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             countLabel.heightAnchor.constraint(equalToConstant: 18)
         
         ])

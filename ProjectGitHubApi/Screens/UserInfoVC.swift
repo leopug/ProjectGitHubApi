@@ -34,6 +34,8 @@ class UserInfoVC: UIViewController {
                 print(user)
                 DispatchQueue.main.async {
                     self.add(childVC: GHAUserInfoHeaderVC(user: user), to: self.headerView)
+                    self.add(childVC: GHARepoItemVC(user: user), to: self.itemViewOne)
+                    self.add(childVC: GHAFollowerItemVC(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentGHAAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -74,9 +76,6 @@ class UserInfoVC: UIViewController {
             
             ])
         }
-        
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
         
         NSLayoutConstraint.activate([
         
