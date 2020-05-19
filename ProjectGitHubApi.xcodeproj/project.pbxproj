@@ -12,6 +12,8 @@
 		3F2EE9A024647AC7006F8AA1 /* GHAUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE99F24647AC6006F8AA1 /* GHAUserInfoHeaderVC.swift */; };
 		3F2EE9A224647B47006F8AA1 /* GHASecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE9A124647B47006F8AA1 /* GHASecondaryTitleLabel.swift */; };
 		3F2EE9A424649D99006F8AA1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE9A324649D99006F8AA1 /* Constants.swift */; };
+		3F743C042474499F006D8026 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F743C032474499F006D8026 /* Date+Ext.swift */; };
+		3F743C0624744A15006D8026 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F743C0524744A15006D8026 /* String+Ext.swift */; };
 		3F779376243B816D00B61F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779375243B816D00B61F05 /* AppDelegate.swift */; };
 		3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F779377243B816D00B61F05 /* SceneDelegate.swift */; };
 		3F77937F243B817400B61F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F77937E243B817400B61F05 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		3F2EE99F24647AC6006F8AA1 /* GHAUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAUserInfoHeaderVC.swift; sourceTree = "<group>"; };
 		3F2EE9A124647B47006F8AA1 /* GHASecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHASecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		3F2EE9A324649D99006F8AA1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F743C032474499F006D8026 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		3F743C0524744A15006D8026 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		3F779372243B816C00B61F05 /* ProjectGitHubApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectGitHubApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F779375243B816D00B61F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F779377243B816D00B61F05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,10 +159,10 @@
 		3F779374243B816C00B61F05 /* ProjectGitHubApi */ = {
 			isa = PBXGroup;
 			children = (
+				3F77939E2443462700B61F05 /* Support */,
 				3F8D5E1C244795EF00C8CA53 /* Utilities */,
 				3F8D5E192445ED1F00C8CA53 /* Managers */,
 				3F7793A12444952C00B61F05 /* Model */,
-				3F77939E2443462700B61F05 /* Support */,
 				3F77939D244345C800B61F05 /* Extensions */,
 				3F77939C2443458300B61F05 /* Custom Views */,
 				3F77939B2443454600B61F05 /* Screens */,
@@ -195,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				3F77939924410ECB00B61F05 /* UIViewController+Ext.swift */,
+				3F743C032474499F006D8026 /* Date+Ext.swift */,
+				3F743C0524744A15006D8026 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				3F7793A5244495FE00B61F05 /* User.swift in Sources */,
 				3FB5A658246B131A00B603E0 /* GHAItemInfoVC.swift in Sources */,
 				3FAB261D244E04A70093BBE1 /* GHAAvatarImageView.swift in Sources */,
+				3F743C0624744A15006D8026 /* String+Ext.swift in Sources */,
 				3F7793982441080500B61F05 /* GHAAlertVC.swift in Sources */,
 				3F2EE9A224647B47006F8AA1 /* GHASecondaryTitleLabel.swift in Sources */,
 				3F7793942440B18A00B61F05 /* GHATitleLable.swift in Sources */,
@@ -345,6 +352,7 @@
 				3F7793A32444954400B61F05 /* Follower.swift in Sources */,
 				3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */,
 				3F8D5E1B2445ED4900C8CA53 /* NetworkManager.swift in Sources */,
+				3F743C042474499F006D8026 /* Date+Ext.swift in Sources */,
 				3F779390243E250000B61F05 /* GHATextField.swift in Sources */,
 				3F77938E243E21D900B61F05 /* GHAButton.swift in Sources */,
 				3F2EE981245DA4B4006F8AA1 /* GHAEmptyStateView.swift in Sources */,

@@ -23,6 +23,7 @@ class FollowerListVC: UIViewController {
         configureViewController()
         getFollowers(username: username, page: page)
         configureDataSource()
+
     }
 
     func configureViewController() {

@@ -13,6 +13,7 @@ class UserInfoVC: UIViewController {
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
+    let dateLabel = GHABodyLabel(textAlignment: .center)
     var itemViews : [UIView] = []
     
     var username: String!
@@ -36,6 +37,7 @@ class UserInfoVC: UIViewController {
                     self.add(childVC: GHAUserInfoHeaderVC(user: user), to: self.headerView)
                     self.add(childVC: GHARepoItemVC(user: user), to: self.itemViewOne)
                     self.add(childVC: GHAFollowerItemVC(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
                 }
             case .failure(let error):
                 self.presentGHAAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -61,7 +63,7 @@ class UserInfoVC: UIViewController {
     
     func layoutUI(){
         
-        itemViews = [headerView,itemViewOne,itemViewTwo]
+        itemViews = [headerView,itemViewOne,itemViewTwo, dateLabel]
         let padding : CGFloat = 20
         let itemHeight : CGFloat = 140
 
@@ -87,6 +89,9 @@ class UserInfoVC: UIViewController {
             
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
         
         ])
     }
