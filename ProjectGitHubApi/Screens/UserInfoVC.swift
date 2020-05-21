@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: class {
+    func didTapGitHubProfile(for user: User)
+    func didTapGetFollowers(for user: User)
+}
+
 class UserInfoVC: UIViewController {
 
     let headerView = UIView()
@@ -17,6 +22,7 @@ class UserInfoVC: UIViewController {
     var itemViews : [UIView] = []
     
     var username: String!
+    weak var delegate: FollowerListVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,26 +38,29 @@ class UserInfoVC: UIViewController {
             
             switch result {
             case .success(let user):
-                print(user)
-                DispatchQueue.main.async {
-                    self.add(childVC: GHAUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.add(childVC: GHARepoItemVC(user: user), to: self.itemViewOne)
-                    self.add(childVC: GHAFollowerItemVC(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
-                }
+                DispatchQueue.main.async { self.configureUIElements(with: user) }
             case .failure(let error):
                 self.presentGHAAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
     
+    func configureUIElements(with user: User) {
+        let repoItemVC = GHARepoItemVC(user: user)
+        repoItemVC.delegate = self
+        
+        let followerItemVC = GHAFollowerItemVC(user: user)
+        followerItemVC.delegate = self
+        
+        self.add(childVC: repoItemVC, to: self.itemViewOne)
+        self.add(childVC: followerItemVC, to: self.itemViewTwo)
+        self.add(childVC: GHAUserInfoHeaderVC(user: user), to: self.headerView)
+        self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
+    }
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
-    }
-    
-    @objc func dismissVC() {
-        dismiss(animated: true )
     }
    
     func add(childVC: UIViewController, to containerView: UIView) {
@@ -75,7 +84,6 @@ class UserInfoVC: UIViewController {
             NSLayoutConstraint.activate([
                 itemView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
                 itemView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
-            
             ])
         }
         
@@ -96,4 +104,18 @@ class UserInfoVC: UIViewController {
         ])
     }
 
+}
+
+extension UserInfoVC: UserInfoVCDelegate {
+    func didTapGitHubProfile(for user: User) {
+        guard let url = URL(string: user.htmlUrl) else {
+            presentGHAAlertOnMainThread(title: "Invalid URL", message: "User's URL are invalid", buttonTitle: "Ok")
+            return
+        }
+        presentSafariVC(with: url)
+    }
+    
+    func didTapGetFollowers(for user: User) {
+        delegate.didRequestFollowers(for: user.login)
+    }
 }

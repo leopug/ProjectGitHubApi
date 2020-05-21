@@ -1,5 +1,9 @@
 import UIKit
 
+protocol FollowerListVCDelegate: class {
+    func didRequestFollowers(for username: String)
+}
+
 class FollowerListVC: UIViewController {
     
     enum Section {
@@ -81,6 +85,7 @@ class FollowerListVC: UIViewController {
         snapshot.appendItems(followers)
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
+            self.collectionView.setContentOffset(.init(x: 0, y: -400), animated: true) // scroll the collection view to the top, can't be zero because it doesn't show the search and the title at zero
         }
     }
     
@@ -93,9 +98,6 @@ class FollowerListVC: UIViewController {
 //        searchController.obscuresBackgroundDuringPresentation = false this change the look when user touch the search bar
         
     }
-    
-    
-    
 }
 
 extension FollowerListVC: UICollectionViewDelegate {
@@ -118,6 +120,7 @@ extension FollowerListVC: UICollectionViewDelegate {
         let activeArray = isSearching ? filteredFollowers : followers
         let follower = activeArray[indexPath.item]
         let infoUserVC = UserInfoVC()
+        infoUserVC.delegate = self 
         let navController = UINavigationController(rootViewController: infoUserVC)
         infoUserVC.username = follower.login
         
@@ -133,14 +136,22 @@ extension FollowerListVC: UISearchResultsUpdating, UISearchBarDelegate {
         isSearching = true
         filteredFollowers = followers.filter { $0.login.contains(filter.lowercased()) }
         updateData(on: filteredFollowers)
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         isSearching = false
         updateData(on: followers)
-        
     }
+}
+
+extension FollowerListVC: FollowerListVCDelegate {
     
-    
+    func didRequestFollowers(for username: String) {
+        self.username = username
+        title = username
+        followers.removeAll()
+        filteredFollowers.removeAll()
+        page = 1
+        getFollowers(username: username, page: page)
+    }
 }
