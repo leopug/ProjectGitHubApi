@@ -33,6 +33,7 @@ class FollowerListVC: UIViewController {
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +99,11 @@ class FollowerListVC: UIViewController {
 //        searchController.obscuresBackgroundDuringPresentation = false this change the look when user touch the search bar
         
     }
+    
+    @objc func addButtonTapped() {
+        print("add button tapped")
+    }
+    
 }
 
 extension FollowerListVC: UICollectionViewDelegate {
