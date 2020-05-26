@@ -27,9 +27,9 @@ class FollowerListVC: UIViewController {
         configureViewController()
         getFollowers(username: username, page: page)
         configureDataSource()
-
+        
     }
-
+    
     func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -96,14 +96,33 @@ class FollowerListVC: UIViewController {
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search Usernames Here"
         navigationItem.searchController = searchController
-//        searchController.obscuresBackgroundDuringPresentation = false this change the look when user touch the search bar
+        //        searchController.obscuresBackgroundDuringPresentation = false this change the look when user touch the search bar
         
     }
     
     @objc func addButtonTapped() {
-        print("add button tapped")
+        showLoadingView()
+        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+            guard let self = self else { return }
+            self.dissmissLoadingView()
+            switch result {
+            case .success(let user):
+                
+                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+                PersistanceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
+                    guard let self = self else { return }
+                    guard let error = error else {
+                        self.presentGHAAlertOnMainThread(title: "Success!", message: "User stored", buttonTitle: "Ok!")
+                        return
+                    }
+                    self.presentGHAAlertOnMainThread(title: "Something went Wrong", message: error.rawValue, buttonTitle: "Ok...")
+                }
+                
+            case .failure(let error):
+                self.presentGHAAlertOnMainThread(title: "Something Wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
     }
-    
 }
 
 extension FollowerListVC: UICollectionViewDelegate {
