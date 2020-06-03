@@ -2,7 +2,7 @@
 //  GHATabBarController.swift
 //  ProjectGitHubApi
 //
-//  Created by Ana Caroline de Souza on 02/06/20.
+//  Created by Leonardo Maia Pugliese on 02/06/20.
 //  Copyright © 2020 Leo Corp. All rights reserved.
 //
 
@@ -12,19 +12,21 @@ class GHATabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        UITabBar.appearance().tintColor = .systemGreen
+        viewControllers = [createSearchNC(),createFavoritesNC()]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func createSearchNC() -> UINavigationController {
+        let searchVC = SearchVC()
+        searchVC.title = "Search"
+        searchVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search , tag: 0)
+        return UINavigationController(rootViewController: searchVC)
     }
-    */
-
+    
+    func createFavoritesNC() -> UINavigationController {
+        let favoritesVC = FavoritesListVC()
+        favoritesVC.title = "Favorites"
+        favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites , tag: 1)
+        return UINavigationController(rootViewController: favoritesVC)
+    }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F2DF97F247C2EB1003C8174 /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DF97E247C2EB1003C8174 /* PersistanceManager.swift */; };
 		3F2DF981247F023C003C8174 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DF980247F023A003C8174 /* FavoriteCell.swift */; };
+		3F2DF9842486D285003C8174 /* GHATabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DF9832486D285003C8174 /* GHATabBarController.swift */; };
 		3F2EE981245DA4B4006F8AA1 /* GHAEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE980245DA4B4006F8AA1 /* GHAEmptyStateView.swift */; };
 		3F2EE9832461CE22006F8AA1 /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE9822461CE21006F8AA1 /* UserInfoVC.swift */; };
 		3F2EE9A024647AC7006F8AA1 /* GHAUserInfoHeaderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EE99F24647AC6006F8AA1 /* GHAUserInfoHeaderVC.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		3F2DF97E247C2EB1003C8174 /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
 		3F2DF980247F023A003C8174 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		3F2DF9832486D285003C8174 /* GHATabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHATabBarController.swift; sourceTree = "<group>"; };
 		3F2EE980245DA4B4006F8AA1 /* GHAEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAEmptyStateView.swift; sourceTree = "<group>"; };
 		3F2EE9822461CE21006F8AA1 /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		3F2EE99F24647AC6006F8AA1 /* GHAUserInfoHeaderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHAUserInfoHeaderVC.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2DF9822486D247003C8174 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F2DF9832486D285003C8174 /* GHATabBarController.swift */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
 		3F2EE97A245DA410006F8AA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		3F77939C2443458300B61F05 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F2DF9822486D247003C8174 /* TabBarControllers */,
 				3F2EE97F245DA479006F8AA1 /* Labels */,
 				3F2EE97E245DA445006F8AA1 /* ViewControllers */,
 				3F2EE97D245DA43B006F8AA1 /* ImageViews */,
@@ -358,6 +369,7 @@
 				3F779378243B816D00B61F05 /* SceneDelegate.swift in Sources */,
 				3FB5A6482469D34C00B603E0 /* GHAItemInfoView.swift in Sources */,
 				3F7793A32444954400B61F05 /* Follower.swift in Sources */,
+				3F2DF9842486D285003C8174 /* GHATabBarController.swift in Sources */,
 				3F779392243F951000B61F05 /* FollowerListVC.swift in Sources */,
 				3F8D5E1B2445ED4900C8CA53 /* NetworkManager.swift in Sources */,
 				3F743C042474499F006D8026 /* Date+Ext.swift in Sources */,
@@ -420,6 +432,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = V53CJ86VCG;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -480,6 +493,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = V53CJ86VCG;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -504,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V53CJ86VCG;
 				INFOPLIST_FILE = ProjectGitHubApi/Support/Info.plist;
@@ -513,6 +528,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.examples.ProjectGitHubApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -522,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V53CJ86VCG;
 				INFOPLIST_FILE = ProjectGitHubApi/Support/Info.plist;
@@ -531,6 +548,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.examples.ProjectGitHubApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
