@@ -28,10 +28,16 @@ class GHAUserInfoHeaderVC: UIViewController {
         
     }
     
-    func configureUIElements() {
+    fileprivate func downloadAvatarImage() {
         NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
             self?.avatarImageView.image = image
         }
+    }
+    
+    func configureUIElements() {
+        
+        downloadAvatarImage()
+        
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No location"

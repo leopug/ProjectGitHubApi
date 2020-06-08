@@ -52,7 +52,7 @@ class NetworkManager {
     }
     
     func getUserInfo(for username: String,
-                      completed: @escaping (Result<User, GHAErrorMessage>) -> Void ) {
+                     completed: @escaping (Result<User, GHAErrorMessage>) -> Void ) {
         let endpoint = baseUrl + "\(username)"
         
         guard let url = URL(string: endpoint) else {
@@ -80,6 +80,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dateDecodingStrategy = .iso8601
                 let user = try decoder.decode(User.self, from: data)
                 completed(.success(user))
             } catch {
@@ -91,7 +92,7 @@ class NetworkManager {
         task.resume()
     }
     
-    func downloadImage(from urlString: String, completed:  @escaping (UIImage)-> Void) {
+    func downloadImage(from urlString: String, completed: @escaping (UIImage?)-> Void) {
         
         let cacheKey = NSString(string: urlString)
         if let image = cache.object(forKey: cacheKey) {
@@ -100,16 +101,20 @@ class NetworkManager {
         }
         
         guard let url = URL(string: urlString) else {
+            completed(nil)
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-            guard let `self` = self else {return}
-            if error != nil { return }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {return}
-            guard let data = data else {return}
+            guard let `self` = self,
+                error == nil ,
+                let response = response as? HTTPURLResponse, response.statusCode == 200,
+                let data = data,
+                let donwloadImage = UIImage(data: data) else {
+                    completed(nil)
+                    return
+            }
             
-            guard let donwloadImage = UIImage(data: data) else { return }
             self.cache.setObject(donwloadImage, forKey: cacheKey)
             completed(donwloadImage)
         }

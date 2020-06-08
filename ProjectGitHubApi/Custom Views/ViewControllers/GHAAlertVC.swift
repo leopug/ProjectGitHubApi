@@ -2,7 +2,7 @@ import UIKit
 
 class GHAAlertVC: UIViewController {
 
-    let containerView = UIView()
+    let containerView = GHAAlertContainerView()
     let titleLabel = GHATitleLable(textAlignment: .center, fontSize: 20)
     let messageLabel = GHABodyLabel(textAlignment: .center)
     let actionButtom = GHAButton(backgroundColor: .systemPink, title: "Ok")
@@ -26,7 +26,7 @@ class GHAAlertVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75) // opacity achieved by alpha 0.75
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.75) // opacity achieved by alpha 0.75
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -35,12 +35,7 @@ class GHAAlertVC: UIViewController {
     
     func configureContainerView() {
         view.addSubview(containerView)
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.backgroundColor = .systemBackground
-        containerView.layer.cornerRadius = 16
-        containerView.layer.borderWidth = 2
-        containerView.layer.borderColor = UIColor.white.cgColor
-        
+
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
