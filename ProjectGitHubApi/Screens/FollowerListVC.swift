@@ -4,7 +4,7 @@ protocol FollowerListVCDelegate: class {
     func didRequestFollowers(for username: String)
 }
 
-class FollowerListVC: UIViewController {
+class FollowerListVC: GHADataLoadingVC {
     
     enum Section {
         case main

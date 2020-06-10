@@ -1,6 +1,6 @@
 import UIKit
 
-class GHAItemInfoVC: UIViewController {
+class GHAItemInfoVC: GHADataLoadingVC {
 
     let stackView = UIStackView()
     let itemInfoViewOne = GHAItemInfoView()
