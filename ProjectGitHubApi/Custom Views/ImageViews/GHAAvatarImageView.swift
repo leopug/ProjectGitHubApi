@@ -2,7 +2,7 @@ import UIKit
 
 class GHAAvatarImageView: UIImageView {
 
-    let placeholderImage = UIImage(named: "avatar-placeholder")
+    let placeholderImage = Images.placeholder
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -17,8 +17,7 @@ class GHAAvatarImageView: UIImageView {
         layer.cornerRadius = 10
         clipsToBounds = true
         image = placeholderImage!
-        translatesAutoresizingMaskIntoConstraints = false 
-        
+        translatesAutoresizingMaskIntoConstraints = false
     }
 
 }

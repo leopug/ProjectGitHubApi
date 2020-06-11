@@ -44,7 +44,7 @@ class GHAUserInfoHeaderVC: UIViewController {
         bioLabel.text = user.bio ?? "N/A"
         bioLabel.numberOfLines = 3
         
-        locationImageView.image = UIImage.init(systemName: SFSymbols.location)
+        locationImageView.image =  SFSymbols.location
         locationImageView.tintColor = .secondaryLabel
         
     }
