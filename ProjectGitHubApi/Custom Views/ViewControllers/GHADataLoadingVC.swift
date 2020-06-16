@@ -15,7 +15,9 @@ class GHADataLoadingVC: UIViewController {
     func showLoadingView() {
         
         containerView = UIView(frame: view.bounds) //fill the whole screen
-        view.addSubview(containerView)
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        
+        view.addSubviews(containerView, activityIndicator)
         
         containerView.backgroundColor = .systemBackground
         containerView.alpha = 0
@@ -24,8 +26,6 @@ class GHADataLoadingVC: UIViewController {
             self.containerView.alpha = 0.8
         }
         
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        containerView.addSubview(activityIndicator)
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
