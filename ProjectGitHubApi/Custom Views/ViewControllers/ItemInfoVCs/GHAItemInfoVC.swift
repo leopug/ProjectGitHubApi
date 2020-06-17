@@ -7,7 +7,6 @@ class GHAItemInfoVC: GHADataLoadingVC {
     let itemInfoViewTwo = GHAItemInfoView()
     let actionButton = GHAButton()
     var user: User!
-    weak var delegate: UserInfoVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,12 +9,12 @@
 import UIKit
 
 protocol UserInfoVCDelegate: class {
-    func didTapGitHubProfile(for user: User)
-    func didTapGetFollowers(for user: User)
+    func didRequestFollowers(for username: String)
 }
 
 class UserInfoVC: GHADataLoadingVC {
-
+    
+    
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
@@ -22,7 +22,7 @@ class UserInfoVC: GHADataLoadingVC {
     var itemViews : [UIView] = []
     
     var username: String!
-    weak var delegate: FollowerListVCDelegate!
+    weak var delegate: UserInfoVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,11 +46,9 @@ class UserInfoVC: GHADataLoadingVC {
     }
     
     func configureUIElements(with user: User) {
-        let repoItemVC = GHARepoItemVC(user: user)
-        repoItemVC.delegate = self
+        let repoItemVC = GHARepoItemVC(user: user, delegate: self)
         
-        let followerItemVC = GHAFollowerItemVC(user: user)
-        followerItemVC.delegate = self
+        let followerItemVC = GHAFollowerItemVC(user: user, delegate: self)
         
         self.add(childVC: repoItemVC, to: self.itemViewOne)
         self.add(childVC: followerItemVC, to: self.itemViewTwo)
@@ -62,7 +60,7 @@ class UserInfoVC: GHADataLoadingVC {
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissVC))
     }
-   
+    
     func add(childVC: UIViewController, to containerView: UIView) {
         addChild(childVC)
         containerView.addSubview(childVC.view)
@@ -75,7 +73,7 @@ class UserInfoVC: GHADataLoadingVC {
         itemViews = [headerView,itemViewOne,itemViewTwo, dateLabel]
         let padding : CGFloat = 20
         let itemHeight : CGFloat = 140
-
+        
         
         for itemView in itemViews {
             view.addSubview(itemView)
@@ -88,9 +86,9 @@ class UserInfoVC: GHADataLoadingVC {
         }
         
         NSLayoutConstraint.activate([
-        
+            
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 180),
+            headerView.heightAnchor.constraint(equalToConstant: 210),
             
             itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
             itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
@@ -99,23 +97,26 @@ class UserInfoVC: GHADataLoadingVC {
             itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
             
             dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-            dateLabel.heightAnchor.constraint(equalToConstant: 18)
-        
+            dateLabel.heightAnchor.constraint(equalToConstant: 50)
+            
         ])
     }
-
+    
 }
 
-extension UserInfoVC: UserInfoVCDelegate {
+extension UserInfoVC: GHAFollowerItemVCDelegate {
+    func didTapGetFollowers(for user: User) {
+        delegate.didRequestFollowers(for: user.login)
+        
+    }
+}
+
+extension UserInfoVC: GHARepoItemVCDelegate {
     func didTapGitHubProfile(for user: User) {
         guard let url = URL(string: user.htmlUrl) else {
             presentGHAAlertOnMainThread(title: "Invalid URL", message: "User's URL are invalid", buttonTitle: "Ok")
             return
         }
         presentSafariVC(with: url)
-    }
-    
-    func didTapGetFollowers(for user: User) {
-        delegate.didRequestFollowers(for: user.login)
     }
 }

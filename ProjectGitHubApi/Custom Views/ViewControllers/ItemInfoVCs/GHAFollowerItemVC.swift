@@ -1,10 +1,25 @@
 import UIKit
 
+protocol GHAFollowerItemVCDelegate: class {
+    func didTapGetFollowers(for user: User)
+}
+
 class GHAFollowerItemVC: GHAItemInfoVC { // GHAFollowerItemVC
+    
+    weak var delegate: GHAFollowerItemVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItems()
+    }
+    
+    init(user: User, delegate: GHAFollowerItemVCDelegate) {
+        super.init(user: user)
+        self.delegate = delegate
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func configureItems() {

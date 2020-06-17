@@ -19,6 +19,7 @@ class GHABodyLabel: UILabel {
     private func configure(){
         textColor = .secondaryLabel
         font = UIFont.preferredFont(forTextStyle: .body)
+        adjustsFontForContentSizeCategory = true
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.75 // how much i want to shrink the font size
         lineBreakMode = .byWordWrapping
