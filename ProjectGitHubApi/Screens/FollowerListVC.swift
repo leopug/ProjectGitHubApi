@@ -21,7 +21,6 @@ class FollowerListVC: GHADataLoadingVC {
         super.init(nibName: nil, bundle: nil)
         self.username = username
         title = username
-        
     }
     
     required init?(coder: NSCoder) {
