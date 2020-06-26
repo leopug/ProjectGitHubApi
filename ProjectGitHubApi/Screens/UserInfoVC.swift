@@ -2,7 +2,7 @@
 //  UserInfoVC.swift
 //  ProjectGitHubApi
 //
-//  Created by Ana Caroline de Souza on 05/05/20.
+//  Created by Leo Corp on 05/05/20.
 //  Copyright © 2020 Leo Corp. All rights reserved.
 //
 
