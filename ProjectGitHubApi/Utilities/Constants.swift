@@ -31,7 +31,6 @@ enum Images {
 }
 
 enum DeviceTypes {
-    
     static let idiom = UIDevice.current.userInterfaceIdiom
     static let nativeScale = UIScreen.main.nativeScale
     static let scale = UIScreen.main.scale
@@ -48,5 +47,4 @@ enum DeviceTypes {
     static func isiPhoneXAspectRatio() -> Bool {
         return isiPhoneX || isiPhoneXsMaxAndXr
     }
-    
 }

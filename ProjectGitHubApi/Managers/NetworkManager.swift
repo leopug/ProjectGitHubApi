@@ -4,18 +4,29 @@ import UIKit
 class NetworkManager {
     
     static let shared = NetworkManager()
-    
     private let baseUrl = "https://api.github.com/users/"
     let cache = NSCache<NSString, UIImage>()
+    var followersUrlBuilder = { (username:String) -> URLComponents in
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.github.com"
+        components.path = "/users/\(username)/followers"
+        return components
+    }
     
     private init(){}
     
     func getFollowers(for username: String,
                       page: Int,
                       completed: @escaping (Result<[Follower], GHAErrorMessage>) -> Void ) {
-        let endpoint = baseUrl + "\(username)/followers?per_page=100&page=\(page)"
         
-        guard let url = URL(string: endpoint) else {
+        var endpoint = followersUrlBuilder(username)
+        endpoint.queryItems = [
+            URLQueryItem(name: "per_page", value: String(100)),
+            URLQueryItem(name: "page", value: String(page))
+        ]
+        print(endpoint.url!.absoluteString)
+        guard let url = URL(string: endpoint.url!.absoluteString) else {
             completed(.failure(.invalidUsername))
             return
         }

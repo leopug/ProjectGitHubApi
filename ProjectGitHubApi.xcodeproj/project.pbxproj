@@ -183,11 +183,11 @@
 		3F779374243B816C00B61F05 /* ProjectGitHubApi */ = {
 			isa = PBXGroup;
 			children = (
-				3F77939E2443462700B61F05 /* Support */,
 				3F8D5E1C244795EF00C8CA53 /* Utilities */,
+				3F77939E2443462700B61F05 /* Support */,
+				3F77939D244345C800B61F05 /* Extensions */,
 				3F8D5E192445ED1F00C8CA53 /* Managers */,
 				3F7793A12444952C00B61F05 /* Model */,
-				3F77939D244345C800B61F05 /* Extensions */,
 				3F77939C2443458300B61F05 /* Custom Views */,
 				3F77939B2443454600B61F05 /* Screens */,
 			);
