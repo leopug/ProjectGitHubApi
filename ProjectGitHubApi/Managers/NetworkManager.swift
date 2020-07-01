@@ -6,11 +6,11 @@ class NetworkManager {
     static let shared = NetworkManager()
     private let baseUrl = "https://api.github.com/users/"
     let cache = NSCache<NSString, UIImage>()
-    var followersUrlBuilder = { (username:String) -> URLComponents in
+    var userUrlComponents = { () -> URLComponents in
         var components = URLComponents()
         components.scheme = "https"
         components.host = "api.github.com"
-        components.path = "/users/\(username)/followers"
+        components.path = "/users"
         return components
     }
     
@@ -20,12 +20,15 @@ class NetworkManager {
                       page: Int,
                       completed: @escaping (Result<[Follower], GHAErrorMessage>) -> Void ) {
         
-        var endpoint = followersUrlBuilder(username)
+        var endpoint = userUrlComponents()
+        
+        endpoint.path += "/\(username)/followers"
+        
         endpoint.queryItems = [
             URLQueryItem(name: "per_page", value: String(100)),
             URLQueryItem(name: "page", value: String(page))
         ]
-        print(endpoint.url!.absoluteString)
+        //print(endpoint.url!.absoluteString)
         guard let url = URL(string: endpoint.url!.absoluteString) else {
             completed(.failure(.invalidUsername))
             return
@@ -64,9 +67,12 @@ class NetworkManager {
     
     func getUserInfo(for username: String,
                      completed: @escaping (Result<User, GHAErrorMessage>) -> Void ) {
-        let endpoint = baseUrl + "\(username)"
         
-        guard let url = URL(string: endpoint) else {
+        var endpoint = userUrlComponents() 
+        
+        endpoint.path += "/\(username)"
+        
+        guard let url = URL(string: endpoint.url!.absoluteString) else {
             completed(.failure(.invalidUsername))
             return
         }
