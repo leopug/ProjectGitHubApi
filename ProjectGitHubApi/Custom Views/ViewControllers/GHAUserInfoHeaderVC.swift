@@ -22,22 +22,15 @@ class GHAUserInfoHeaderVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubViews()
+        view.addSubviews(avatarImageView,usernameLabel,nameLabel,locationImageView,locationLabel,bioLabel)
         layoutUI()
         configureUIElements()
-        
-    }
-    
-    fileprivate func downloadAvatarImage() {
-        NetworkManager.shared.downloadImage(from: user.avatarUrl) { [weak self] image in
-            self?.avatarImageView.image = image
-        }
     }
     
     func configureUIElements() {
         
-        downloadAvatarImage()
-        
+        avatarImageView.downloadImage(fromUrl: user.avatarUrl)
+
         usernameLabel.text = user.login
         nameLabel.text = user.name ?? ""
         locationLabel.text = user.location ?? "No location"
@@ -47,10 +40,6 @@ class GHAUserInfoHeaderVC: UIViewController {
         locationImageView.image =  SFSymbols.location
         locationImageView.tintColor = .secondaryLabel
         
-    }
-    
-    func addSubViews(){
-        view.addSubviews(avatarImageView,usernameLabel,nameLabel,locationImageView,locationLabel,bioLabel)
     }
     
     func layoutUI() {
@@ -90,7 +79,5 @@ class GHAUserInfoHeaderVC: UIViewController {
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bioLabel.heightAnchor.constraint(equalToConstant: 90)
         ])
-        
     }
-    
 }

@@ -28,6 +28,7 @@ class GHAAlertVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75) // opacity achieved by alpha 0.75
         view.addSubviews(containerView,titleLabel,actionButtom, messageLabel)
+        
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
@@ -35,13 +36,11 @@ class GHAAlertVC: UIViewController {
     }
     
     func configureContainerView() {
-
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             containerView.widthAnchor.constraint(equalToConstant: 280),
             containerView.heightAnchor.constraint(equalToConstant: 220)
-        
         ])
     }
  

@@ -1,7 +1,7 @@
 import UIKit
 
 class GHAAvatarImageView: UIImageView {
-
+    
     let placeholderImage = Images.placeholder
     
     override init(frame: CGRect) {
@@ -19,5 +19,12 @@ class GHAAvatarImageView: UIImageView {
         image = placeholderImage!
         translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
+    func downloadImage(fromUrl url: String) {
+        NetworkManager.shared.downloadImage(from: url) { [weak self] image in
+            DispatchQueue.main.async {
+                self?.image = image
+            }
+        }
+    }
 }

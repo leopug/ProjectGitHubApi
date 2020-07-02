@@ -39,5 +39,5 @@ class GHAFollowerItemVC: GHAItemInfoVC { // GHAFollowerItemVC
         
         delegate.didTapGetFollowers(for: user)
         dismissVC()
-        }
     }
+}

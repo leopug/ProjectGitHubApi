@@ -56,6 +56,19 @@ class FollowerListVC: GHADataLoadingVC {
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
     }
     
+    fileprivate func updateUIBasedOnFollowers(_ followers: [Follower]) {
+        if followers.count < 100 { self.hasMoreFollowers = false}
+        self.followers.append(contentsOf: followers)
+        if self.followers.isEmpty {
+            let message = "This user doesn't have any followers. You might want to follow!😉"
+            DispatchQueue.main.async {
+                self.showEmptyStateView(with: message, in: self.view)
+                return
+            }
+        }
+        self.updateData(on: self.followers)
+    }
+    
     func getFollowers(username: String, page: Int) {
         showLoadingView()
         isLoadingMoreFollowers = true
@@ -64,16 +77,7 @@ class FollowerListVC: GHADataLoadingVC {
             self.dissmissLoadingView()
             switch result {
             case .success(let followers):
-                if followers.count < 100 { self.hasMoreFollowers = false}
-                self.followers.append(contentsOf: followers)
-                if self.followers.isEmpty {
-                    let message = "This user doesn't have any followers. You might want to follow!😉"
-                    DispatchQueue.main.async {
-                        self.showEmptyStateView(with: message, in: self.view)
-                        return
-                    }
-                }
-                self.updateData(on: self.followers)
+                self.updateUIBasedOnFollowers(followers)
             case .failure(let errorMessage):
                 self.presentGHAAlertOnMainThread(title: "Error", message: errorMessage.rawValue, buttonTitle: "Ok")
             }
@@ -95,7 +99,9 @@ class FollowerListVC: GHADataLoadingVC {
         snapshot.appendItems(followers)
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
-            self.collectionView.setContentOffset(.init(x: 0, y: -400), animated: true) // scroll the collection view to the top, can't be zero because it doesn't show the search and the title at zero
+            if(followers.count < 101) {
+                self.collectionView.setContentOffset(.init(x: 0, y: -200), animated: true) // scroll the collection view to the top, can't be zero because it doesn't show the search and the title at zero
+            }
         }
     }
     
