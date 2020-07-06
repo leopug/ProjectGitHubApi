@@ -105,7 +105,7 @@ class NetworkManager {
             }
             
         }
-        
+
         task.resume()
     }
     
@@ -135,7 +135,7 @@ class NetworkManager {
             self.cache.setObject(donwloadImage, forKey: cacheKey)
             completed(donwloadImage)
         }
+        
         task.resume()
     }
-    
 }
