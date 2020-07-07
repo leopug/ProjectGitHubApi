@@ -36,7 +36,7 @@ enum PersistanceManager {
         }
     }
     
-    static func updateWith(favorite: Follower, actionType: PersistanceActionType, completed: @escaping (GHAErrorMessage?)->Void) {
+    static func updateFavoriteListWith(favorite: Follower, actionType: PersistanceActionType, completed: @escaping (GHAErrorMessage?)->Void) {
         
         retrieveFavorites { result in
             switch result {

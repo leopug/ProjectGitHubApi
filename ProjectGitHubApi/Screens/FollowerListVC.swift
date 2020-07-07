@@ -114,6 +114,18 @@ class FollowerListVC: GHADataLoadingVC {
         
     }
     
+    fileprivate func updateFavoriteListLocalStorage(_ user: (User)) {
+        let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
+        PersistanceManager.updateFavoriteListWith(favorite: favorite, actionType: .add) { [weak self] error in
+            guard let self = self else { return }
+            guard let error = error else {
+                self.presentGHAAlertOnMainThread(title: "Success!", message: "User stored", buttonTitle: "Ok!")
+                return
+            }
+            self.presentGHAAlertOnMainThread(title: "Something went Wrong", message: error.rawValue, buttonTitle: "Ok...")
+        }
+    }
+    
     @objc func addButtonTapped() {
         showLoadingView()
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
@@ -122,15 +134,7 @@ class FollowerListVC: GHADataLoadingVC {
             switch result {
             case .success(let user):
                 
-                let favorite = Follower(login: user.login, avatarUrl: user.avatarUrl)
-                PersistanceManager.updateWith(favorite: favorite, actionType: .add) { [weak self] error in
-                    guard let self = self else { return }
-                    guard let error = error else {
-                        self.presentGHAAlertOnMainThread(title: "Success!", message: "User stored", buttonTitle: "Ok!")
-                        return
-                    }
-                    self.presentGHAAlertOnMainThread(title: "Something went Wrong", message: error.rawValue, buttonTitle: "Ok...")
-                }
+                self.updateFavoriteListLocalStorage(user)
                 
             case .failure(let error):
                 self.presentGHAAlertOnMainThread(title: "Something Wrong", message: error.rawValue, buttonTitle: "Ok")
