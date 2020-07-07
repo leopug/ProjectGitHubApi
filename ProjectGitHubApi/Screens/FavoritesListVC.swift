@@ -34,21 +34,25 @@ class FavoritesListVC: GHADataLoadingVC {
         
     }
     
+    fileprivate func updateUI(_ favorites: ([Follower])) {
+        if favorites.isEmpty {
+            self.showEmptyStateView(with: "No favorites???\n Add one on the follower screen", in: self.view)
+        } else {
+            self.favorites = favorites
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.view.bringSubviewToFront(self.tableView) // just in case that empty state is in front of table view
+            }
+        }
+    }
+    
     func getFavorites() {
         PersistanceManager.retrieveFavorites {[weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let favorites):
                 
-                if favorites.isEmpty {
-                    self.showEmptyStateView(with: "No favorites???\n Add one on the follower screen", in: self.view)
-                } else {
-                    self.favorites = favorites
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        self.view.bringSubviewToFront(self.tableView) // just in case that empty state is in front of table view
-                    }
-                }
+                self.updateUI(favorites)
                 
             case .failure(let error):
                 self.presentGHAAlertOnMainThread(title: "Wrong ocurred!", message: error.rawValue, buttonTitle: "Ok...")

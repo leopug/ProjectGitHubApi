@@ -133,9 +133,7 @@ class FollowerListVC: GHADataLoadingVC {
             self.dissmissLoadingView()
             switch result {
             case .success(let user):
-                
                 self.updateFavoriteListLocalStorage(user)
-                
             case .failure(let error):
                 self.presentGHAAlertOnMainThread(title: "Something Wrong", message: error.rawValue, buttonTitle: "Ok")
             }
